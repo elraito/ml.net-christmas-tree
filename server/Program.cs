@@ -26,13 +26,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapModelBuilderRoutes();
 
-app.MapGet("/", () =>
-{
-   return Results.Ok("Ok");
-})
-.WithName("HealthCheck")
-.WithOpenApi();
 
 app.Run();

@@ -12,7 +12,7 @@ public static class ModelBuilderRoutes
             _modelBuilder.TrainModel();
             return Results.Ok("Building model...");
         })
-        .WithName("Trainodel")
+        .WithName("TraiModel")
         .WithOpenApi();
 
         endpoints.MapPost("/predict", async(IInferenceService _inferenceService, [FromForm] PredictDto? predictDto) => 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jõulu kuusker</title>
+  <script src="js/index.js" defer></script>
+</head>
+<body>
+
+  <h1>Lae üles pilt kuusest:</h1>
+
+  <form id="fileUploadForm" enctype="multipart/form-data">
+    <label for="fileInput">Vali fail:</label>
+    <input type="file" id="fileInput" name="File" accept=".jpg">
+    <br>
+    <button type="button" onclick="uploadFile()">Lae üles</button>
+  </form>
+
+  <div id="resultContainer">
+  </div>
+</body>
+</html>
