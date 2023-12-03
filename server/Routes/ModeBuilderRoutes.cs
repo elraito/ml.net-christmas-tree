@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Server.Services;
 
@@ -7,8 +8,9 @@ public static class ModelBuilderRoutes
 {
     public static void MapModelBuilderRoutes(this IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapGet("/train", (IModelBuilderService _modelBuilder) => 
+        endpoints.MapGet("/train", (IModelBuilderService _modelBuilder, IConfiguration _config, string pwd) => 
         {
+            if (_config.GetValue<string>("TrainPassword") != pwd) return Results.BadRequest("No thank you!");
             _modelBuilder.TrainModel();
             return Results.Ok("Building model...");
         })
