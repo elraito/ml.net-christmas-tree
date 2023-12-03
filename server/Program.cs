@@ -14,7 +14,7 @@ builder.Services.AddSingleton<IModelBuilderService, ModelBuilderService>();
 builder.Services.AddSingleton<IInferenceService, InferenceService>();
 
 builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>()
-    .FromFile("workspace/model.zip");
+    .FromFile("/data/workspace/model.zip");
 
 var app = builder.Build();
 
