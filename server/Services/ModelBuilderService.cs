@@ -19,7 +19,7 @@ public class ModelBuilderService(MLContext mlContext) : IModelBuilderService
 
     public void TrainModel()
     {
-        string projectDirectory = Directory.GetCurrentDirectory();
+        string projectDirectory = Environment.CurrentDirectory;
         string workspaceRelativePath = Path.Combine(projectDirectory, "workspace");
         string assetsRelativePath = Path.Combine(projectDirectory, "dataset");
 
